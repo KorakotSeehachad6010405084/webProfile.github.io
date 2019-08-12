@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fontawesome-free-5.10.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./css/cssStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Athiti|Dosis|Indie+Flower|Slabo+27px&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+</head>
+
+<body>
+  <header>
+    <div class="container headWeb py-4">
+      <div class="row rounded mx-3 p-auto">  
+        <div class="col-8">
+          <p id="font-size60px" class="font-slabo"> <i class="fab fa-css3-alt mx-3"></i>CSS Specificity</p>
+        </div>
+        <div class="col-3 fix-right"></div>
+        <div class="col-1">
+          <a href="./index.html">
+            <button type="button" class="btn btn-outline-light buttonLink">
+                <i class="fas fa-home fa-2x"></i>
+              <h6 class="text-center">Home</h7>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main class="font-athiti">
+    <div class="container-fluid bg-intro py-1">
+      <div class="row">
+        <div class="col-6 bg-white m-5 p-5 rounded">
+          <h1>What CSS ???</h1>
+          <p>CSS ย่อมาจาก Cascading Style Sheet  คือภาษาที่ใช้เป็นส่วนของการจัดรูปแบบการแสดงผลเอกสาร HTML 
+            โดยที่ CSS กำหนดรูปแบบ ของเว็บ ได้แก่ สีของข้อความ สีพื้นหลัง ประเภทตัวอักษร และการจัดวางข้อความ 
+            ซึ่งการเขียน css ก็สามารถเขียนได้หลายๆแบบ เช่นการเขียนโดยใช้ selector หรือจะเป็นการเขียนแบบ inline 
+            ซึ่งได้ผลลัพธ์ที่ออกมาก็สามารถใช้งานได้เหมือนกัน แต่บางคนอาจจะเคยเจอเวลาที่เรา override style นั้นแล้ว 
+            แต่ทำไมไม่ได้ผลลัพธ์ตามที่เราต้องการ คนส่วนใหญ่เลยแก้ปัญหาโดยการเติม !important เข้าไป ซึ่งมันไม่ดีเอาซะเลย 
+            เพราะเมื่อ code เรามากขึ้น แล้วเราเอาแต่ใช้ !important จะทำให้ style ทับกันเละยิ่งกว่าเดิม เราจึงจำเป็นที่จะต้องรู้ว่า 
+            browser มีมันวิธีการเลือกใช้ style ยังไง เพื่อที่จะลดการทับกันของ style เราได้
+          </p>
+        </div>
+      <div class="col-4 a m-5 p-5 text-center"><i id="font-size300px" class="fas fa-file-code "></i></div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid bg-content py-5">
+      <div class="text-center">
+        <h1>CSS Specificity</h1>  
+      </div>
+      <div class="bg-light p-5 m-5">
+          <div class="py-3">
+              <h2>อะไรคือ CSS Specificity ?</h2>   
+              <p>
+                คือค่าบางอย่างที่จะจะบอก browser ว่าให้เลือกใช้ Style ตัวไหนมาแสดงผลหน้าเว็บ 
+                ซึ่งมันมีวิธีที่จะคำนวนค่าความสำคัญออกมาเพื่อให้ browser รู้ได้
+              </p>    
+            </div>
+            <div class="py-3">
+              <h2>แล้วจะคำนวณค่ายังไง?</h2>
+              <p>การคำนวณนี้เราจะใช้หลักดูค่าพลัง หรือความสำคัญรวมของแต่ละตัวโดยที่ทุกตัวเริ่มมามีค่าพลัง 0 
+              และแต่ละการเขียน style มีค่าพลังดังนี้
+            </p>
+            </div>
+            
+            
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Style</th>
+                    <th scope="col">Specificity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Inline style</td>
+                    <td>1000</td>
+                  </tr>
+                  <tr>
+                  <th scope="row">2</th>
+                  <td>ID selectors</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Class selectors, Attributes selectors, Pseudo-classes</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Type selectors, Pseudo-elements</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">5</th>
+                      <td>Universal selector, Combinators, Negation pseudo-clas</td>
+                      <td>0</td>
+                    </tr>
+              </tbody>
+            </table>
+            <div class="py-3">
+                <h2>Example</h2>
+                <div class="p-4 row">
+                  <span class="col-6 border border-secondary rounded">
+                    <h4 class="pt-4 pl-5">CODE</h4>
+                    <pre><code>
+                      &lt;div id="page"&gt; 
+                        &lt;div class="box"&gt;
+                          &lt;p&gt; Hello World &lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    </code></pre>
+                  
+                  <h4 class="pt-4 pl-5">CSS Style</h4>
+                    <pre><code>
+                      #page .box {
+                        color: green;
+                      }
+                      #page div {
+                        color: red;
+                      }</code></pre>
+                    </span>
+
+                  <span class="col-6 text-center">
+                    <br><br><br><br><br><br><br>
+                    <h1 style="color: green;">Hello World</h1>
+                  </span>
+                </div>  
+            </div>
+      </div>
+    </div>
+  </main>
+
+  <blockquote class="blockquote text-center py-4">
+      <p class="mb-0 text-light mb-3" id="font-size30px">Reference</p>
+      <footer class="blockquote-footer text-dark"> Source :
+        <cite title="Source Title">
+           <a class="text-light" href="https://medium.com/@thanuphon18/css-specificity-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%87%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%86-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%80%E0%B8%84%E0%B8%A2%E0%B8%A3%E0%B8%B9%E0%B9%89-f23a0bf5ae87">CSS Specificity เรื่องง่ายๆ ที่หลายคนไม่เคยรู้ </a>  &
+           <a class="text-light" href="https://www.designil.com/css-specificity-and-hack.html">CSS Specificity พื้นฐานการเขียน CSS ที่คนส่วนใหญ่ไม่รู้ & เทคนิค Hack </a>
+        </cite>
+      </footer>
+  </blockquote>
+</body>
+</html>

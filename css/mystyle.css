@@ -1,0 +1,92 @@
+body {
+    background-color: #e5c1cd;
+}
+
+hr {
+    border-color: white;
+    border-width: 2px;
+    width: auto;
+}
+
+.content {
+    background-image: url(../images/small-papers-bg.png);
+    opacity: 0.5;
+}
+
+.post-text p {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+}
+
+/* Font style */
+.font-indieFlower {
+    font-family: 'Indie Flower', cursive;
+}
+
+.font-AmaticSC {
+    font-family: 'Amatic SC', cursive;
+}
+
+.font-Athiti {
+    font-family: 'Athiti', sans-serif;   
+}
+
+.font-Slabo27px {
+    font-family: 'Slabo 27px', serif;
+}
+
+.font-Dosis {
+    font-family: 'Dosis', sans-serif;
+}
+
+
+/* Font size */
+.font-size70px {
+    font-size: 70px;
+}
+
+.font-size30px {
+    font-size: 30px;
+}
+
+/* Homepage Style */
+.bg-image img{
+    max-width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container-homePage {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#text-block {
+    position: absolute;
+    border: 10px solid white;
+    opacity: 0.9;
+    padding: 80px 150px;
+}
+
+h1#text-homePage {
+    font-size: 100px; 
+    color: white;
+}
+
+.buttonLink {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px 15px;
+    font-size: 20px;
+    letter-spacing: 7px;
+}
